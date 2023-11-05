@@ -3,8 +3,10 @@ import React from "react";
 
 const AddressForm = () => {
   return (
-    <div className="flex flex-col gap-2 p-3 border-2 rounded-md shadow-lg">
-      <h1 className="text-xl font-medium py-3 pb-0">Search location</h1>
+    <div className="flex flex-col gap-2 p-3 border-[1px] rounded-md ">
+      <h1 className="text-xl font-medium py-3 pb-0 text-white">
+        Search location
+      </h1>
       <TextField variant="filled" label="Address line 1"></TextField>
       <TextField variant="filled" label="Address line 2"></TextField>
 
@@ -25,10 +27,7 @@ const AddressForm = () => {
       <Button
         variant="contained"
         sx={{
-          backgroundColor: "#ebe8e8",
           marginTop: "5px",
-          color: "#545454",
-          "&:hover": { backgroundColor: "black", color: "white" },
         }}
       >
         Submit

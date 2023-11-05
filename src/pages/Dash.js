@@ -3,6 +3,8 @@ import AddressForm from "../components/AddressForm";
 import { Select, FormControl, MenuItem, InputLabel } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 const Dash = () => {
   const [airline, setAirLine] = useState("All");
@@ -24,69 +26,72 @@ const Dash = () => {
   let imageTypes = ["Color", "B&W", " RGB"];
 
   return (
-    <div>
-      <div className="h-[70px] border-b-4 border-[#eddddd] mb-9 pb-2 flex items-end">
-        <div className="flex justify-end w-11/12 mx-auto ">
-          <div className="flex  gap-2 items-center">
-            <span>Filters :</span>
-            <FormControl size="small" sx={{ minWidth: 120 }}>
-              <InputLabel id="demo-simple-select-filled-label">
-                Airlines
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-filled-label"
-                id="demo-simple-select-filled"
-                value={airline}
-                label={"Airlines"}
-                onChange={(e) => {
-                  setAirLine(e.target.value);
-                }}
-              >
-                {airlines.map((str) => {
-                  return <MenuItem value={str}>{str}</MenuItem>;
-                })}
-              </Select>
-            </FormControl>
+    <>
+      <div className="min-h-screen">
+        <NavBar className="justify-between">
+          <div className="flex ">
+            <div className="flex  gap-2 items-center">
+              <span className="text-white">Filters :</span>
+              <FormControl size="small" sx={{ minWidth: 120 }}>
+                <InputLabel id="demo-simple-select-filled-label">
+                  Airlines
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-filled-label"
+                  id="demo-simple-select-filled"
+                  value={airline}
+                  label={"Airlines"}
+                  onChange={(e) => {
+                    setAirLine(e.target.value);
+                  }}
+                >
+                  {airlines.map((str) => {
+                    return <MenuItem value={str}>{str}</MenuItem>;
+                  })}
+                </Select>
+              </FormControl>
 
-            <FormControl size="small" sx={{ minWidth: 120 }}>
-              <InputLabel id="demo-simple-select-filled-label">
-                Image Type
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-filled-label"
-                id="demo-simple-select-filled"
-                label={"Image Type"}
-                value={imageType}
-                onChange={(e) => {
-                  setImageType(e.target.value);
-                }}
-              >
-                {imageTypes.map((str) => {
-                  return <MenuItem value={str}>{str}</MenuItem>;
-                })}
-              </Select>
-            </FormControl>
-            <DatePicker
-              label="Select date"
-              minDate={dayjs(new Date())}
-              slotProps={{ textField: { size: "small" } }}
-            />
+              <FormControl size="small" sx={{ minWidth: 120 }}>
+                <InputLabel id="demo-simple-select-filled-label">
+                  Image Type
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-filled-label"
+                  id="demo-simple-select-filled"
+                  label={"Image Type"}
+                  value={imageType}
+                  onChange={(e) => {
+                    setImageType(e.target.value);
+                  }}
+                >
+                  {imageTypes.map((str) => {
+                    return <MenuItem value={str}>{str}</MenuItem>;
+                  })}
+                </Select>
+              </FormControl>
+              <DatePicker
+                label="Select date"
+                minDate={dayjs(new Date())}
+                slotProps={{ textField: { size: "small" } }}
+              />
+            </div>
+          </div>
+        </NavBar>
+        <div className="flex  justify-center gap-10 w-11/12 mx-auto mt-[25px]">
+          <div className="w-[30%]">
+            <AddressForm />
+          </div>
+          <div className="w-[70%]">
+            <img
+              src={require("../assets/map.png")}
+              alt="map"
+              className="h-[550px]"
+            ></img>
           </div>
         </div>
       </div>
-      <div className="flex  justify-center gap-10 w-11/12 mx-auto">
-        <div className="w-[30%]">
-          <AddressForm />
-        </div>
-        <div className="w-[70%]">
-          <img
-            src={require("../assets/map.png")}
-            alt="map"
-            className="h-[550px]"
-          ></img>
-        </div>
-      </div>
-    </div>
+      <Footer></Footer>
+    </>
   );
 };
 

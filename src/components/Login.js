@@ -23,13 +23,12 @@ const Login = () => {
   return (
     <div className="text-white w-[30%] p-3">
       <div className="flex flex-col gap-2">
-        <h1 className="text-5xl pb-6 font-semibold">Login to your account</h1>
+        <h1 className="text-4xl pb-2 font-semibold">Login</h1>
         <TextField
           label="Email"
           variant="filled"
           className="rounded-lg"
           size="small"
-          sx={{ backgroundColor: "white", color: "black" }}
         ></TextField>
 
         <TextField
@@ -37,10 +36,6 @@ const Login = () => {
           variant="filled"
           size="small"
           className="rounded-lg"
-          sx={{
-            backgroundColor: "white",
-            color: "black",
-          }}
           shape="rounded"
         ></TextField>
 
