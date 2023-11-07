@@ -23,7 +23,9 @@ const Login = () => {
   return (
     <div className="text-white w-[30%] p-3">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl pb-2 font-semibold">Login</h1>
+        <h1 className="text-4xl pb-2 font-semibold">
+          Login to Earth Observation
+        </h1>
         <TextField
           label="Email"
           variant="filled"
@@ -53,6 +55,9 @@ const Login = () => {
           Login
         </Button>
       </div>
+      <p className="mt-1 ml-2">
+        Not a Space Intel customer yet? <u>Sign up</u>
+      </p>
     </div>
   );
 };

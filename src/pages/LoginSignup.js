@@ -9,7 +9,7 @@ const LoginSignup = () => {
       <div className=" min-h-screen ">
         <NavBar className="justify-between">
           <div className="flex gap-8  text-white mr-4 underline">
-            <p>About us</p> <p>Roadmap</p> <p>Signup</p>
+            <p>About Space Intel Earth Observation Services</p>
           </div>
         </NavBar>
         <div className="w-11/12 flex justify-evenly items-center  mx-auto">
