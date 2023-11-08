@@ -70,7 +70,12 @@ const Dash = () => {
                 </Select>
               </FormControl>
               <DatePicker
-                label="Select date"
+                label="start date"
+                minDate={dayjs(new Date())}
+                slotProps={{ textField: { size: "small" } }}
+              />
+              <DatePicker
+                label="end date"
                 minDate={dayjs(new Date())}
                 slotProps={{ textField: { size: "small" } }}
               />
@@ -83,7 +88,9 @@ const Dash = () => {
           </div>
           <div className="w-[70%]">
             <img
-              src={require("../assets/map.png")}
+              src={
+                "https://cdn.britannica.com/37/245037-050-79129D52/world-map-continents-oceans.jpg"
+              }
               alt="map"
               className="h-[550px]"
             ></img>
