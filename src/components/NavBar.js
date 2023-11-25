@@ -8,7 +8,7 @@ const NavBar = (props) => {
       <img
         src={require("../assets/logo.png")}
         alt="logo"
-        className="h-[70px] ml-3"
+        className="h-[100px] ml-3"
       ></img>
       {props.children}
     </div>
