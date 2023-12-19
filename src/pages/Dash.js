@@ -5,6 +5,7 @@ import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import CusMap from "../components/CusMap";
 
 const Dash = () => {
   const [airline, setAirLine] = useState("All");
@@ -87,13 +88,7 @@ const Dash = () => {
             <AddressForm />
           </div>
           <div className="w-[70%]">
-            <img
-              src={
-                "https://cdn.britannica.com/37/245037-050-79129D52/world-map-continents-oceans.jpg"
-              }
-              alt="map"
-              className="h-[550px]"
-            ></img>
+            <CusMap></CusMap>
           </div>
         </div>
       </div>
