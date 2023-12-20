@@ -17,13 +17,13 @@ const CusMap = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/start-event-processing")
+      .get(`${process.env.REACT_APP_BACKEND_URL}/start-event-processing`)
       .then((response) => console.log(response.data))
       .catch((error) => console.error(error));
 
     const intervalId = setInterval(() => {
       axios
-        .get("http://localhost:5000/get-data")
+        .get(`${process.env.REACT_APP_BACKEND_URL}/get-data`)
         .then((response) => setData(response.data.data))
         .catch((error) => console.error(error));
     }, 1000);
@@ -32,7 +32,7 @@ const CusMap = () => {
       clearInterval(intervalId);
       // Stop event processing when the component unmounts
       axios
-        .get("http://localhost:5000/stop-event-processing")
+        .get(`${process.env.REACT_APP_BACKEND_URL}/stop-event-processing`)
         .then((response) => console.log(response.data))
         .catch((error) => console.error(error));
     };
@@ -40,7 +40,7 @@ const CusMap = () => {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyDG8ym6yFRrHI5Ed_2f1pabFclQebctUQ0",
+    googleMapsApiKey: `${process.env.REACT_APP_MAP_KEY}`,
   });
 
   console.log(isLoaded);
